@@ -1,3 +1,8 @@
+# NewsBlog - Your Ultimate News Blog App
+
+Description:
+NewsBlog is a dynamic news blog app project hosted on GitHub that aims to revolutionize how users consume and share news articles. With a user-friendly interface and powerful features, NewsBlog makes it easy for anyone to stay informed and engaged in the world of news and blogs.
+
 # Astro Starter Kit: Basics
 
 ```sh
