@@ -1,0 +1,27 @@
+---
+import news from '../data/news.json';
+---
+
+<div class="h-full w-5/6 lg:w-2/5 py-3">
+    <div class="py-4">
+        <div class="bg-black w-full flex flex-col justify-start align-middle items-start text-left shadow-sm p-4 rounded-sm">
+            <div>
+                <h2 class="text-orange-400 text-4xl font-bold">New</h2>
+            </div>
+            {
+                news.map((newsBlog)=>(
+                    <div class="news-card w-full">
+                        <div class="py-4 border-b-slate-400 border-b-2 w-full">
+                            <div>
+                                <h2 class="text-white text-lg font-bold">{newsBlog.header}</h2>
+                                <p class="text-slate-400">{newsBlog.body}</p>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+
+
+        </div>
+    </div>
+</div>

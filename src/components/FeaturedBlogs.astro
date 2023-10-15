@@ -1,0 +1,26 @@
+---
+import featuredBlogs from "../data/news-featured.json";
+
+const {id, image, title, body} = Astro.props;
+---
+
+<div class="w-5/6 lg:w-full grid grid-cols-1 col-span-1 lg:grid-cols-3">
+    
+    {
+        featuredBlogs.map((blog)=>(
+            <a href={`/blog/${blog.id}`}>
+                <div class="w-full flex flex-row justify-start lg:justify-between items-center gap-3 py-4">
+                    <div class="w-1/4 h-full">
+                        <img src={blog.image} class="rounded-sm h-full w-full" alt={blog.title}>
+                    </div>
+                    <div class="w-3/4 flex flex-col justify-between items-start gap-1 rounded-sm bg-slate-50 p-1">
+                        <span class="text-slate-400 text-2xl">0{blog.id}</span>
+                        <h2 class="text-slate-900 text-md font-bold">{blog.title}</h2>
+                        <p class="text-slate-700">{blog.body}</p>
+                    </div>
+                </div>
+            </a>
+        ))
+    }
+    
+</div>

@@ -2,16 +2,18 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Hero from '../components/Hero.astro';
+import AsideBlog from '../components/AsideBlog.astro';
+import FeaturedBlogs from '../components/FeaturedBlogs.astro';
 ---
 
 <Layout title="New Blog">
     <div class="w-full flex flex-col justify-center items-center">
-        <div class="w-full flex flex-col lg:w-4/5 lg:flex-row justify-center items-center align-middle my-4">
+        <div class="w-full flex flex-col lg:w-4/5 lg:flex-row justify-center items-center lg:justify-start lg:items-start align-middle my-4">
             <Hero/>
-            <Hero/>
+            <AsideBlog/>
         </div>
         <div class="w-full flex flex-col lg:w-4/5 lg:flex-row justify-center items-center align-middle my-4">
-            Featured Blogs
+            <FeaturedBlogs/>
         </div>
     </div>
 </Layout>

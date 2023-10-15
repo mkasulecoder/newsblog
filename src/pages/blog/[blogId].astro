@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BlogDetail from "../../components/BlogDetail.astro";
+import featuredBlog from "../../data/news-featured.json";
+
+const path = Astro.url.pathname;
+const param = path.substring(6, path.length);
+
+---
+<Layout title="Blog Details">
+    <div class="bg-red-200">
+            {
+                featuredBlog.filter(
+                    (blog)=>(blog.id == param)
+                    )
+                    .map(
+                        (currentBlog => (
+                            <BlogDetail title={currentBlog.title} image={currentBlog.image} body={currentBlog.body}/>
+                            )
+                        ))
+                    
+            }
+        </div>
+<Layout>
+
