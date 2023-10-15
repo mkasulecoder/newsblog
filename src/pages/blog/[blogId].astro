@@ -1,25 +1,33 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import BlogDetail from "../../components/BlogDetail.astro";
 import featuredBlog from "../../data/news-featured.json";
+
+import NavMenu from "../../components/Menu.astro"; 
+import BlogDetail from "../../components/BlogDetail.astro";
+import Footer from "../../components/Footer.astro";
+
 
 const path = Astro.url.pathname;
 const param = path.substring(6, path.length);
 
+const blog = featuredBlog.filter((blog)=>(blog.id == param));
+
 ---
-<Layout title="Blog Details">
-    <div class="bg-red-200">
-            {
-                featuredBlog.filter(
-                    (blog)=>(blog.id == param)
-                    )
-                    .map(
-                        (currentBlog => (
-                            <BlogDetail title={currentBlog.title} image={currentBlog.image} body={currentBlog.body}/>
-                            )
-                        ))
-                    
-            }
-        </div>
-<Layout>
+
+<div class="h-full lg:h-screen flex flex-col justify-between items-between bg-red-400">
+    <NavMenu/>
+    <div class="bg-red-200 h-full">
+        {
+            featuredBlog.filter(
+                (blog)=>(blog.id == param)
+                )
+                .map(
+                    (currentBlog => (
+                        <BlogDetail title={currentBlog.title} image={currentBlog.image} body={currentBlog.body}/>
+                        )
+                    ))
+                
+        }
+    </div>
+    <Footer/>
+</div>
 
